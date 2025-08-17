@@ -1,35 +1,78 @@
-// const { CloudinaryStorage } = require("multer-storage-cloudinary");
+/*
+const { CloudinaryStorage } = require("multer-storage-cloudinary");
 
-// 	mapboxgl.accessToken = mapToken;
-//     const map = new mapboxgl.Map({
-//          container: 'map', // container ID
-//         style:"mapbox://mapbox.mapbox-streets-v8",
+	mapboxgl.accessToken = mapToken;
+    const map = new mapboxgl.Map({
+         container: 'map', // container ID
+        style:"mapbox://mapbox.mapbox-streets-v8",
        
-//         center: listing.geometry.coordinates, // starting position [lng, lat]. Note that lat must be set between -90 and 90
-//         zoom: 9 // starting zoom
-//     });
-//     const marker=new mapboxgl.Marker({color:"red"})
-//     .setLngLat(listing.geometry.coordinates)
-//     .setPopup(
-// new mapboxgl.Popup({offset:25}).setHTML(
-//     `<h4>${listing.title}</h4><p>Exact Location will be provided after booking</p>`
-// )
-//     )
-//     .addTo(map);
-mapboxgl.accessToken = mapToken;
-
-const map = new mapboxgl.Map({
-    container: 'map', 
-    style: 'mapbox://styles/mapbox/streets-v11',
-    center: listing.geometry.coordinates, 
-    zoom: 9
-});
-
-const marker = new mapboxgl.Marker({ color: "red" })
+        center: listing.geometry.coordinates, // starting position [lng, lat]. Note that lat must be set between -90 and 90
+        zoom: 9 // starting zoom
+    });
+    const marker=new mapboxgl.Marker({color:"red"})
     .setLngLat(listing.geometry.coordinates)
     .setPopup(
-        new mapboxgl.Popup({ offset: 25 }).setHTML(`
-            <h4>${listing.title}</h4><p>Exact Location will be provided after booking</p>
-       ` )
+new mapboxgl.Popup({offset:25}).setHTML(
+    `<h4>${listing.title}</h4><p>Exact Location will be provided after booking</p>`
+)
     )
     .addTo(map);
+    */
+  // const { CloudinaryStorage } = require("multer-storage-cloudinary");
+       mapboxgl.accessToken = mapToken;
+console.log(mapToken);
+    const map = new mapboxgl.Map({
+         container: 'map', // container ID
+        style:"mapbox://styles/mapbox/streets-v8",
+       
+        center: listing.geometry.coordinates, // starting position [lng, lat]. Note that lat must be set between -90 and 90
+        zoom: 9 // starting zoom
+    });
+    const marker=new mapboxgl.Marker({color:"red"})
+    .setLngLat(listing.geometry.coordinates)
+    .setPopup(
+new mapboxgl.Popup({offset:25}).setHTML(
+    `<h4>${listing.title}</h4><p>Exact Location will be provided after booking</p>`
+)
+    )
+    .addTo(map);
+
+//     <!DOCTYPE html>
+// <html lang="en">
+//   <head>
+//     <meta charset="UTF-8" />
+//     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+//     <title>Journeo</title>
+//     <link rel="stylesheet" href="/css/style.css" />
+//     <link
+//       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css"
+//       rel="stylesheet"
+//       integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT"
+//       crossorigin="anonymous"
+//     />
+//     <link
+//       rel="stylesheet"
+//       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+//       integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+//       crossorigin="anonymous"
+//       referrerpolicy="no-referrer"
+//     />
+//     <link rel="stylesheet" href="/css/rating.css" />
+//     <link href="https://api.mapbox.com/mapbox-gl-js/v3.14.0/mapbox-gl.css" rel="stylesheet">
+// <script src="https://api.mapbox.com/mapbox-gl-js/v3.14.0/mapbox-gl.js"></script>
+//   </head>
+//   <body>
+//     <%- include("../includes/navbar.ejs")%>
+
+//     <div class="container">
+//       <%- include("../includes/flash.ejs")%> <%-body-%>
+//     </div>
+//     <%- include ("../includes/footer.ejs")%>
+//     <script
+//       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
+//       integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO"
+//       crossorigin="anonymous"
+//     ></script>
+//     <script src="/js/script.js"></script>
+//   </body>
+// </html>
