@@ -12,16 +12,25 @@ module.exports.renderNewForm=(req,res)=>{
     // console.log(req.user);
 res.render("./listings/new.ejs");
 };
-module.exports.showListing=async (req,res)=>{
-let {id}=req.params;
-const listing=await newListings.findById(id).populate({path:"reviews",populate:{path:"author"},}).populate("owner");//using nested populate
-if(!listing){
-    req.flash("error","Listing is not existing");
-    res.redirect("/listings");
-}
-//console.log(listing);
-// req.flash("error","Listing is not existing");
-res.render("./listings/show.ejs",{listing});
+// module.exports.showListing=async (req,res)=>{
+// let {id}=req.params;
+// const listing=await newListings.findById(id).populate({path:"reviews",populate:{path:"author"},}).populate("owner");//using nested populate
+// if(!listing){
+//     req.flash("error","Listing is not existing");
+//     res.redirect("/listings");
+// }
+// //console.log(listing);
+// // req.flash("error","Listing is not existing");
+// res.render("./listings/show.ejs",{listing});
+// };
+module.exports.showListing = async (req, res) => {
+    let { id } = req.params;
+    const listing = await newListings.findById(id).populate({ path: "reviews", populate: { path: "author" }, }).populate("owner");
+    if (!listing) {
+        req.flash("error", "Listing is not existing");
+        res.redirect("/listings");
+    }
+    res.render("./listings/show.ejs", { listing, mapToken }); 
 };
 module.exports.createListing=async(req,res,next)=>{
 let response=  await  geocodingClient.forwardGeocode({
